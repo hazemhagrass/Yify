@@ -1,0 +1,64 @@
+{
+    "manifest_version": 2,
+    "author": "Hazem Hagrass",
+    "name": "__MSG_extName__",
+    "short_name": "yify",
+
+    "default_locale": "en",
+    "description": "This extension is used to help you get updated by latest yifi torrents",
+    "version": "1.1.8.2",
+
+    "permissions": [
+    "notifications",
+    "http://*/*",
+    "https://*/*"
+  ],
+
+    "background": {
+        "scripts": [
+      "js/libs/jquery-1.10.2.min.js",
+      "js/libs/underscore-min.js",
+      "js/libs/backbone-min.js",
+      "js/application.js",
+      "js/models/torrent.js",
+      "js/background.js"
+    ],
+        "persistent": true
+    },
+
+    "browser_action": {
+        "default_icon": "icons/256.png",
+        "default_popup": "index.html"
+    },
+
+    "icons": {
+        "default_icon": "icons/256.png",
+        "16": "icons/16.png",
+        "48": "icons/48.png",
+        "128": "icons/128.png"
+    },
+
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+
+    "web_accessible_resources": [
+    "css/bootstrap.css",
+    "css/style.css",
+    "css/rating.css",
+    "css/bootstrap-responsive.css",
+    "css/flat-ui.css",
+    "js/libs/jquery-1.10.2.min.js",
+    "js/libs/bootstrap.min.js",
+    "js/libs/jquery-migrate-1.2.1.min.js",
+    "js/app-config.js",
+    "js/libs/underscore-min.js",
+    "js/libs/backbone-min.js",
+    "js/application.js",
+    "js/models/torrent.js",
+    "js/views/list.js",
+    "js/views/listItem.js",
+    "js/views/details.js",
+    "js/offline-storage.js",
+    "js/utils/template-utils.js",
+    "js/main.js"
+  ]
+}

@@ -1,0 +1,1 @@
+node /var/www/yifi/server/scrap_yifi.js

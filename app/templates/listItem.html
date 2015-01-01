@@ -1,0 +1,27 @@
+ <li  class="span4 gallery-item" data-id="id-<%= torrent.MovieID %>" data-type1="<%=torrent.Genre1%>" data-type2="<%=torrent.Genre2%>">
+    <h5><%= torrent.MovieTitleClean %></h5>
+    <a class='cover-img-link' href="gallery-single.htm"><img class='cover-image' src="<%= torrent.LargeCover %>" alt="Gallery"></a>
+    <span class="torrent-movie">
+      <p><b>Genre: </b> <span class='torrent-genre'><%= torrent.Genre1 %>, <%= torrent.Genre2 %></span></p>
+      <p><b>Size: </b> <span class='torrent-size'><%= torrent.Size %></span></p>
+      <p><b>Quality: </b> <span class='torrent-quality'><%= torrent.Quality %></span></p>
+      <p>
+        <b>IMDb Rating: </b>
+        <span class='torrent-imdb' style="color: <%= torrent.MovieRating <= 6 ? 'red' : (torrent.MovieRating <= 7.5 ? 'blue' : 'green') %>;">
+            <%= torrent.MovieRating %>
+        </span>
+      </p>
+      <p><b>Resolution:</b> <span class='torrent-resolution'><%= torrent.Resolution %></span></p>
+      <p><b>Frame Rate:</b> <span class='torrent-frame-rate'><%= torrent.FrameRate %></span></p>
+      <p><b>Language:</b> <span class='torrent-language'><%= torrent.Language %></span></p>
+      <p><b>Peers/Seeds: </b><span class='torrent-peers_seeds'><%= torrent.TorrentPeers %>/<%= torrent.TorrentSeeds %></span></p>
+      <p><b>Downloaded: </b><span class='torrent-downloaded'><%= torrent.Downloaded %></span></p>
+
+      <a href="<%= torrent.MovieUrl %>" target="_blank" class="torrent-link btn btn-primary visit" role="button">Visit</a>
+      <a href="<%= torrent.TorrentUrl %>" target="_blank" class="torrent-link btn btn-primary download" role="button">Download</a>
+    </span>
+
+    <span class='project-details'>
+      <span><%= torrent.ShortDescription %></span>
+    </span>
+</li>

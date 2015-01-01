@@ -1,0 +1,59 @@
+<div class="accordion-group">
+  <div class="accordion-heading">
+    <img src="<%= torrents[0].CoverImage %>" alt="exaple-image" class="thumbnail img-rounded">
+    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#<%= torrents[0].MovieID %>">
+      <span><%= torrents[0].MovieTitleClean %></span>
+      
+      <!-- <span class="caret"></span>   -->    
+      <span class="badge"><%=torrents.length%></span>
+
+      <div class='quick-info'>
+        <span class='torrent-year'>
+          <b>Year: </b>
+          <b><%= torrents[0].MovieYear %></b>
+        </span>
+        <p>
+          <b>IMDb Rating: </b>
+          <span class='torrent-imdb' style="color: <%= torrents[0].MovieRating <= 6 ? 'red' : (torrents[0].MovieRating <= 7.5 ? 'blue' : 'green') %>;">
+            <%= torrents[0].MovieRating %>
+          </span>
+          <b>  </b>
+          <b>Genre: </b> <span class='torrent-genre'><%= torrents[0].Genre %></span>
+        </p>
+      </div>
+    </a>
+  </div>
+  <div id="<%= torrents[0].MovieID %>" class="accordion-body collapse">
+    <div class="accordion-inner">
+
+      <% _.each(torrents, function(torrent) { %>
+        <div class='row'>
+          <img src="<%= torrent.CoverImage %>" alt="exaple-image" width="462" height="308" class="cover-image img-rounded">
+          <!-- <p class="img-comment">
+            -------------------------------------
+            blalalalalalalala
+            000000
+            000000000000000000000000000000
+          </p> -->
+          
+          <div class="torrent-movie">
+            <p><b>Size: </b> <span class='torrent-size'><%= torrent.Size %></span></p>
+            <p><b>Quality: </b> <span class='torrent-quality'><%= torrent.Quality %></span></p>
+            <!-- <p><b>Resolution:</b> <span class='torrent-resolution'>Resolution</span></p>
+            <p><b>Frame Rate:</b> <span class='torrent-frame-rate'>FrameRate</span></p>
+            <p><b>Language:</b> <span class='torrent-language'>Language</span></p> -->
+            <p><b>Peers/Seeds: </b><span class='torrent-peers_seeds'><%= torrent.TorrentPeers %>/<%= torrent.TorrentSeeds %></span></p>
+
+            <p><b>Downloaded: </b><span class='torrent-downloaded'><%= torrent.Downloaded %></span></p>
+            <!-- <p><b>Uploaded:</b><span class='torrent-uploaded'>-</span></p> -->
+
+            <a href="<%= torrent.MovieUrl %>" target="_blank" class="torrent-link btn btn-primary visit" role="button">Visit</a>
+            <a href="<%= torrent.TorrentUrl %>" target="_blank" class="torrent-link btn btn-primary download" role="button">Download</a>
+
+          </div>
+        </div>
+        <div class='clear'/>
+      <% }); %>
+    </div>
+  </div>
+</div>
