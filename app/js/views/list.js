@@ -1,7 +1,7 @@
 yifyApp.views.List = Backbone.View.extend({
 
 	views: new Array(),
-
+	categories: new Array(),
 	initialize:function (args) {
 		var subviews = new Array();
 		var operation = "";

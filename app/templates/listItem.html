@@ -2,6 +2,7 @@
     <h5><%= torrent.MovieTitleClean %></h5>
     <a class='cover-img-link' href="gallery-single.htm"><img class='cover-image' src="<%= torrent.LargeCover %>" alt="Gallery"></a>
     <span class="torrent-movie">
+      <p><b>Year: </b> <span class='torrent-genre'><%= torrent.MovieYear %></span></p>
       <p><b>Genre: </b> <span class='torrent-genre'><%= torrent.Genre1 %>, <%= torrent.Genre2 %></span></p>
       <p><b>Size: </b> <span class='torrent-size'><%= torrent.Size %></span></p>
       <p><b>Quality: </b> <span class='torrent-quality'><%= torrent.Quality %></span></p>

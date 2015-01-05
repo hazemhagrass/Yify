@@ -6,13 +6,9 @@
 
     "default_locale": "en",
     "description": "This extension is used to help you get updated by latest yifi torrents",
-    "version": "1.0.2",
+    "version": "1.0.3",
 
-<<<<<<< Updated upstream
-    "permissions": [
-=======
   "permissions": [
->>>>>>> Stashed changes
     "notifications"
   ],
 
@@ -25,13 +21,8 @@
       "js/models/torrent.js",
       "js/background.js"
     ],
-<<<<<<< Updated upstream
-        "persistent": true
-    },
-=======
     "persistent": true
   },
->>>>>>> Stashed changes
 
     "icons": {
         "default_icon": "icons/256.png",
