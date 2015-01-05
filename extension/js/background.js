@@ -7,7 +7,7 @@ function checkTorrents() {
 function checkLatestTorrents() {
     var torrent = new yifyApp.models.Torrent();
     torrent.fetchLatest({
-        limit: 20,
+        limit: 50,
         success: function (latest) {
             var latestTorrents = latest.toJSON().MovieList;
             cachedTorrents.latest = mergeTorrents(latestTorrents);
@@ -55,7 +55,7 @@ function checkUpcomingTorrents() {
     cachedTorrents.upcoming = new Array();
     var torrent = new yifyApp.models.Torrent();
     torrent.fetchUpcoming({
-        limit: 20,
+        limit: 50,
         success: function (upcoming) {
             upcoming = upcoming.toJSON();
             var torrents = $.map(upcoming, function (value, index) {
