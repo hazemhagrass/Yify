@@ -22,7 +22,7 @@
     var genres = chrome.extension.getBackgroundPage().cachedTorrents.genres;
     for(var key in genres){
       if(key != "null")
-        app.genres.push(key);
+        app.genres.push({name: key, count: genres[key]});
     }
     setTimeout(function(){
       if(!app.torrents.latest)

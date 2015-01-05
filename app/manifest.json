@@ -6,7 +6,7 @@
 
     "default_locale": "en",
     "description": "This extension is used to help you get updated by latest yifi torrents",
-    "version": "1.0.4",
+    "version": "1.0.5",
 
   "permissions": [
     "notifications"

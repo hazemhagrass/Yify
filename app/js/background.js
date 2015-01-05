@@ -27,8 +27,16 @@ function checkLatestTorrents() {
             $(cachedTorrents.latest).each(function (index, torrent) {
                 fetchTorrentDetails(index, torrent.MovieID, function (index, torrent) {
                     cachedTorrents.latest[index] = torrent;
-                    cachedTorrents.genres[torrent.Genre1] = torrent.Genre1;
-                    cachedTorrents.genres[torrent.Genre2] = torrent.Genre2;
+
+                    if(cachedTorrents.genres[torrent.Genre1] >= 0)
+                        cachedTorrents.genres[torrent.Genre1] ++;
+                    else
+                        cachedTorrents.genres[torrent.Genre1] = 1;
+                    
+                    if(cachedTorrents.genres[torrent.Genre2] >= 0)
+                        cachedTorrents.genres[torrent.Genre2] ++;
+                    else
+                        cachedTorrents.genres[torrent.Genre2] = 1;
                 });
             });
 
