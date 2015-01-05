@@ -19,7 +19,7 @@ function fetchTorrentDetails(index, id, callback) {
 function checkLatestTorrents() {
     var torrent = new yifyApp.models.Torrent();
     torrent.fetchLatest({
-        limit: 20,
+        limit: 100,
         success: function (latest) {
             var latestTorrents = latest.toJSON().MovieList;
             cachedTorrents.latest = latestTorrents;
