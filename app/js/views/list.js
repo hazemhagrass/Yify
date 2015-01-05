@@ -1,7 +1,8 @@
 yifyApp.views.List = Backbone.View.extend({
 
 	views: new Array(),
-	categories: new Array(),
+	genres: new Array(),
+
 	initialize:function (args) {
 		var subviews = new Array();
 		var operation = "";
@@ -16,6 +17,7 @@ yifyApp.views.List = Backbone.View.extend({
 		}
 
 		this.template = _.template(yifyApp.utils.TemplateUtils.get('list'));
+		this.genres = args.genres;
 		this.setOperation(args.operation);
 
 		var that = this;
@@ -32,7 +34,7 @@ yifyApp.views.List = Backbone.View.extend({
 	},
 
 	render:function (eventName) {
-		$(this.el).html(this.template(this.defaults));
+		$(this.el).html(this.template({genres: this.genres}));
 
 		var that = this;
 		setTimeout(function(){

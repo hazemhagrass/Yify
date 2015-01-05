@@ -10,6 +10,7 @@
     latest: null,
     upcoming: null
   },
+  genres: new Array(),
 
   initialize: function() {
    
@@ -17,6 +18,12 @@
   waitLoadingData: function() {
     app.torrents.latest = chrome.extension.getBackgroundPage().cachedTorrents.latest;
     app.torrents.upcoming = chrome.extension.getBackgroundPage().cachedTorrents.upcoming;
+    
+    var genres = chrome.extension.getBackgroundPage().cachedTorrents.genres;
+    for(var key in genres){
+      if(key != "null")
+        app.genres.push(key);
+    }
     setTimeout(function(){
       if(!app.torrents.latest)
         app.waitLoadingData();
@@ -29,7 +36,8 @@
 
     console.log('#latest');
     app.changePage(new yifyApp.views.List({operation: "LATEST",
-         torrents: app.torrents.latest}));
+         torrents: app.torrents.latest,
+         genres: app.genres}));
 
   },
 
